@@ -1,13 +1,21 @@
-const mysql = require('mysql')
+require('dotenv').config({
+    path: process.env.NODE_ENV === 'test' ? '.env.test' : '.env'
 
-const connection = mysql.createConnection({
-    host: 'localhost',
-    port: 3306,
-    user: 'root',
-    dialect: 'mysql',
-    password: 'hollowdrum',
-    database: 'node-auth'
 })
 
+module.exports = {
+    host: process.env.DB_HOST,
+    username: process.env.DB_USER,
+    password: process.env.DB_PASS,
+    database: process.env.NAME,
+    dialect: process.env.DB_DIALECT || 'mysql',
+    storage: './__tests_/database.sqlite',
+    operatorsAliases: false,
+    loggins: false,
+    define: {
+        timestamps: true,
+        underscored: true,
+        underscoredAll: true
+    }
+}
 
-module.exports = connection
