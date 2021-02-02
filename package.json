@@ -1,5 +1,5 @@
 {
-  "name": "auth-tdd",
+  "name": "node-auth",
   "version": "1.0.0",
   "description": "",
   "main": "index.js",
@@ -11,7 +11,7 @@
     "posttest": "NODE_ENV=test sequelize db:migrate:undo:all"
   },
   "keywords": [],
-  "author": "",
+  "author": "Monaliza Vitor",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",
